@@ -1,2 +1,2 @@
 [workspace]
-members = ["hello", "variables"]
+members = ["hello", "variables", "functions"]
