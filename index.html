@@ -33,6 +33,18 @@
             box-shadow: #00102099 5px 5px;
             text-shadow: #001020DD 3px 3px;
         }
+
+        code {
+            font-family: monospace;
+            background-color: #ffffff20;
+            color: white;
+            text-decoration: none;
+            text-shadow: none;
+            word-wrap: break-word;
+            box-decoration-break: clone;
+            padding: .1rem .3rem .2rem;
+            border-radius: .2rem;
+        }
     </style>
 </head>
 
@@ -46,7 +58,33 @@
             Completion Certificate (soon)<!--</a>--></li>
     </ul>
 
+    <h2>Set Up</h2>
+    Install rust (check installation by <code>rustc --version</code>)
+    Install c++ build tools to avoid link.exe not found error
+
     <h2>Intro</h2>
+
+    Safety, Concurrency, Speed
+    Cargo - package manager, build system, docs generator
+    Configs files use toml format
+
+    Command for creating new project (called hello in this case)
+    <p><code>cargo new hello</code></p>
+
+    <h2>Variables</h2>
+    <ul>
+        <li>Typed</li>
+        <li>Immutable by default</li>
+        <li>Scoped</li>
+        <li>Compile-time checks that ensure memory safety as well</li>
+    </ul>
+
+    <code>const c = 3;<br>
+    let immutable = 5;<br>
+    let mut mutable = 7;</code>
+
+    <h2>Explain error types</h2>
+    <p><code>rustc --explain E0384</code></p>
 </div>
 </body>
 
