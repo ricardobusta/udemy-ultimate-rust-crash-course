@@ -1,3 +1,5 @@
+use hello::greet;
+
 fn main() {
     println!("Hello, world!");
 
@@ -20,4 +22,6 @@ fn main() {
     println!("shadow={}", shadow);
     let mut shadow = 9;
     println!("same scope shadow={}", shadow);
+
+    greet();
 }
