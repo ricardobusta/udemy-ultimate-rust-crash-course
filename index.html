@@ -97,6 +97,32 @@
     standard library e.g. <code>use std::collections::HashMap</code>
     crates.io - rust community registry
     packages (or crates) can be added to the dependencies <code> name = "version"</code> format
+
+    <h2>Literal Types</h2>
+    u8 to u128 and i8 to i128, usize and isize, f32 and f64
+    byte usually means u8
+    underscore are ignored on number representations. e.g. 0xff_32_00_af
+    suffix literal instead of annotating type. E.g. 5u16, 3.14f32 (or 3.14_f32)
+    bool: true, false
+    char - 4 bytes
+    strings are UTF8 internally, sometimes when dealing with a single character, 1 character string
+
+    <h2>Compound Types</h2>
+    tuples (maximum arity of 12)
+    <code> let t = (1, 3.3, "asd"); </code>
+    <code> let f = t.0; </code>
+    <code> let g = t.1; </code>
+    <code> let h = t.2; </code>
+    <code> let (f,g,h) = t; // access all at once </code>
+
+    array (maximum size of 32)
+    <code>let buf = [1, 2, 3];</code>
+    <code>let buf = [0; 3]; // [0, 0, 0]</code>
+    annotation
+    <code>let buf : [u8; 3] = [0, 0, 0]; // even when you specify all</code>
+
+    > than 32, use vector instead
+
 </div>
 </body>
 
