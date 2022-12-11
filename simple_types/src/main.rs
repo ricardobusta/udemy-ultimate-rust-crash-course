@@ -1,5 +1,10 @@
 // Silence some warnings so they don't distract from the exercise.
-#![allow(dead_code, unused_variables)]
+
+use simple_types::print_difference;
+use simple_types::print_array;
+use simple_types::ding;
+use simple_types::on_off;
+use simple_types::print_distance;
 
 fn main() {
     let coords: (f32, f32) = (6.3, 15.0);
@@ -48,36 +53,6 @@ fn main() {
     // output. Then go refactor the print_distance() function according to the
     // instructions in the comments inside that function.
 
-    // print_distance(coords);
-}
-
-fn print_difference(x: f32, y: f32) {
-    println!("Difference between {} and {} is {}", x, y, (x - y).abs());
-}
-
-fn print_array(a: [f32; 2]) {
-    println!("The coordinates are ({}, {})", a[0], a[1]);
-}
-
-fn ding(x: i32) {
-    if x == 13 {
-        println!("Ding, you found 13!");
-    }
-}
-
-fn on_off(val: bool) {
-    if val {
-        println!("Lights are on!");
-    }
-}
-
-fn print_distance((x,y): (f32, f32)) {
-    // Using z.0 and z.1 is not nearly as nice as using x and y.  Lucky for
-    // us, Rust supports destructuring function arguments.  Try replacing "z" in
-    // the parameter list above with "(x, y)" and then adjust the function
-    // body to use x and y.
-    println!(
-        "Distance to the origin is {}",
-        ( x.powf(2.0) + y.powf(2.0) ).sqrt());
+     print_distance(coords);
 }
 
