@@ -163,6 +163,19 @@
     using word.bytes can get an addressable array of bytes (works fine for simple ascii text)
     package unicode-segmentations to handle graphemes
     nth method to index strings instead of using direct index
+
+    <h2>Ownership</h2>
+    Only one variable can own a value. It can be borrowed or copied.
+    Variable goes out of scope -> Value gets trashed.
+    Copy using .clone() method. "copy" means only stack data is copied. Clone copy heap and offset ptr to match new variable (deep copy).
+    Passing ownership to functions and returning value means the function intends to modify the passed in value.
+    <code>do_something(&ref_value)</code>
+    It's possible to make a mutable reference to access mutable values
+    <code>&mut variable_or_type</code>
+    dereferencing:
+    <code>x: &mut i32;</code>
+    <code>&x // mutable i32</code>
+    Not possible to have multiple mutable references -> Thread safety
 </div>
 </body>
 
