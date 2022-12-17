@@ -12,6 +12,11 @@
       <sourceFolder url="file://$MODULE_DIR$/d_control_flow_strings/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/simple_types/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/z_hello/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/e_ownership_references/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/f_structs_traits/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/g_collections_enums/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/h_closures_threads/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/z_final_project/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
       <excludeFolder url="file://$MODULE_DIR$/hello/target" />
       <excludeFolder url="file://$MODULE_DIR$/z_hello/target" />
