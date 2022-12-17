@@ -1,2 +1,8 @@
 [workspace]
-members = ["hello", "variables", "functions", "simple_types"]
+members = [
+    "z_hello",
+    "a_variables",
+    "b_functions",
+    "c_simple_types",
+    "d_control_flow_strings"
+]

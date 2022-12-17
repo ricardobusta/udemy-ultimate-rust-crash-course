@@ -123,6 +123,46 @@
 
     > than 32, use vector instead
 
+    <h2>Control flow</h2>
+    If statement - pretty similar, no parenthesis. No auto type conversion, must always eval to bool.
+    if statement can return a value e.g.
+    <code>
+        let msg = if num==5 {
+            "five"
+        } else if num == 3 {
+            "three"
+        } else {
+            "other"
+        };
+    </code>
+    note semicolon usage indicating return (regular return won't work for this purpose)
+
+    loops can have identifiers (tick) and can be used to break out of it e.g.
+    <code>
+        'asd : loop { // unconditional loop
+            loop {
+                loop {
+                    break 'asd; // also continue
+                }
+            }
+        }
+    </code>
+
+    <h2>Strings</h2>
+    6 types of string in Rust
+    2 most used
+    - borrowed string slice (str or &str)
+        string literals are always borrowed string
+        can't be modified
+    - String (created using to_string();)
+        or String::from("literal");
+        has capacity which can differ from string actual size
+        can be modified
+    access string by index -> complicated due to how unicode works
+    one grapheme can be made out of multiple scalars (e.g. diacritic symbols)
+    using word.bytes can get an addressable array of bytes (works fine for simple ascii text)
+    package unicode-segmentations to handle graphemes
+    nth method to index strings instead of using direct index
 </div>
 </body>
 

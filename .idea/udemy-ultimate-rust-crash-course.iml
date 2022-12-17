@@ -6,9 +6,15 @@
       <sourceFolder url="file://$MODULE_DIR$/hello/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/variables/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/a_variables/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/b_functions/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/c_simple_types/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/d_control_flow_strings/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/simple_types/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/z_hello/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
       <excludeFolder url="file://$MODULE_DIR$/hello/target" />
+      <excludeFolder url="file://$MODULE_DIR$/z_hello/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

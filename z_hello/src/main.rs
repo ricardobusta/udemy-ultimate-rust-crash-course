@@ -1,4 +1,4 @@
-use hello::greet;
+use z_hello::{greet, if_statement, loops};
 
 fn main() {
     println!("Hello, world!");
@@ -24,4 +24,8 @@ fn main() {
     println!("same scope shadow={}", shadow);
 
     greet();
+
+    println!("{}", if_statement(5));
+
+    loops();
 }

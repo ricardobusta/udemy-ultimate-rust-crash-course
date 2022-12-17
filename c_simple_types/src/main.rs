@@ -1,6 +1,6 @@
 // Silence some warnings so they don't distract from the exercise.
 
-use simple_types::{print_difference, print_array, ding, on_off, print_distance};
+use c_simple_types::{print_difference, print_array, ding, on_off, print_distance};
 
 fn main() {
     let coords: (f32, f32) = (6.3, 15.0);
