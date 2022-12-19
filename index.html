@@ -185,6 +185,21 @@
     Traits can implement behaviours for existing types
     e.g. Copy trait -> object gets copied instead of moved. Good for small objects that fit in the stack.
     More like "components"
+
+    <h2>Collections</h2>
+    Most common: Vector
+    <code>let mut v: Vec&lt;i32&gt; = Vec::new()</code>
+    macro for creating vector: <code>let mut v: vec![2,4,6]</code>
+    Also: HashMap, VecDeque, BTreeMap, LinkedList, BinaryHeap, BTreeSet (BT are binary-tree sorted versions)
+
+    <h2>Enums</h2>
+    Similar to Union in C++
+    Can store one type of value, and also it's value
+    example
+    <code>enum Option&lt;T&gt;{Some(T), None}</code>
+    if let - checks for one pattern
+    match - Checks multiple patterns
+    <code>enum Result&lt;T,E&gt;{OK(T), Err(E)}</code>
 </div>
 </body>
 
