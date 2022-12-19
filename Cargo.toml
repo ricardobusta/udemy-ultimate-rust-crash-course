@@ -10,4 +10,5 @@ members = [
     "g_collections_enums",
     "h_closures_threads",
     "z_final_project",
+    "z_invaders",
 ]
