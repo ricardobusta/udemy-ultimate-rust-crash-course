@@ -1,4 +1,4 @@
-use z_hello::{greet, if_statement, loops};
+use z_hello::{closure_fun, greet, if_statement, loops, strawberry};
 
 fn main() {
     println!("Hello, world!");
@@ -28,4 +28,8 @@ fn main() {
     println!("{}", if_statement(5));
 
     loops();
+
+    strawberry();
+
+    closure_fun();
 }

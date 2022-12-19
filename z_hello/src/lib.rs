@@ -53,3 +53,21 @@ pub fn loops(){
         println!("for loop c ({}, {})", x, y);
     }
 }
+
+pub fn strawberry(){
+    let s = "🍓".to_string();
+    let f = || {println!("{}", s)};
+
+    f();
+}
+
+pub fn closure_fun(){
+    let mut v = vec![2, 4, 5];
+
+    let result = v.iter()
+        .map(|x| x * 3)
+        .filter( |x| *x > 10)
+        .fold(0, |acc, x| acc + x);
+
+    println!("fold result {}", result);
+}

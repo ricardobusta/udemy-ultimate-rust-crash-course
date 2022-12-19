@@ -200,6 +200,26 @@
     if let - checks for one pattern
     match - Checks multiple patterns
     <code>enum Result&lt;T,E&gt;{OK(T), Err(E)}</code>
+    Match can use guards for checking for specific values
+
+    <h2>Closures</h2>
+    syntax is <code>let sum = | x, y | { x + y }</code>
+    then you call it with <code>sum(2, 3)</code>
+    Closures can own references and make sure variables live as long as the closure itself survives.
+    This means you can send it to different threads etc with safety.
+
+    <h2>Thread</h2>
+    <code>use std::thread;</code>
+    and spawn it as
+    <code>let handle = thread::spawn(move || { // do stuff in here });</code>
+    and wait it to finish with
+    <code>handle.join().unwrap();</code>
+    good for parallel stuff, not so good if sharing same cpu (context switching overhead)
+    for just awaiting things like IO, use async/await instead
+    using crossbeam::channel for testing purposes
+    need to drop transmitter to end child threads waiting the receiver.
+
+    
 </div>
 </body>
 
