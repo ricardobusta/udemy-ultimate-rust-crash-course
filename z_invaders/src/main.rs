@@ -12,6 +12,7 @@ use z_invaders::frame;
 use z_invaders::render;
 use z_invaders::player::Player;
 use z_invaders::frame::Drawable;
+use z_invaders::invaders::Invaders;
 
 fn main() -> Result<(), Box<dyn Error>> {
     let mut audio = Audio::new();
@@ -36,7 +37,7 @@ fn main() -> Result<(), Box<dyn Error>> {
         let mut last_frame = frame::new_frame();
         let mut stdout = io::stdout();
         render::render(&mut stdout, &last_frame, &last_frame, true);
-        loop{
+        loop {
             let curr_frame = match render_rx.recv() {
                 Ok(x) => x,
                 Err(_) => break,
@@ -49,6 +50,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     // Game Loop
     let mut player = Player::new();
     let mut instant = Instant::now();
+    let mut invaders = Invaders::new();
     'gameloop: loop {
         // Per-frame init
         let mut curr_frame = frame::new_frame();
@@ -77,9 +79,15 @@ fn main() -> Result<(), Box<dyn Error>> {
 
         // Updates
         player.update(delta);
+        if invaders.update(delta) {
+            audio.play("move");
+        }
 
         // Draw & render
-        player.draw(&mut curr_frame);
+        let drawables: Vec<&dyn Drawable> = vec![&player, &invaders];
+        for drawable in drawables {
+            drawable.draw(&mut curr_frame);
+        }
         let _ = render_tx.send(curr_frame); // silently ignore result. first frames will crash.
         thread::sleep(Duration::from_millis(1)); // prevent thousands of updates
     }
