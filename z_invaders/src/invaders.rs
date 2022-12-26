@@ -19,7 +19,11 @@ impl Invaders {
         let mut army = Vec::new();
         for x in 0..NUM_COLS {
             for y in 0..NUM_ROWS {
-                if (x > 1) && (x < NUM_COLS - 2) && (y > 0) && (y < 9) && (y % 2 == 0) && (x % 2 == 0) {
+                if (x > 1) && (x < NUM_COLS - 2)
+                    && (y > 0)
+                    && (y < 9)
+                    && (y % 2 == 0)
+                    && (x % 2 == 0) {
                     army.push(Invader { x, y })
                 }
             }
@@ -49,8 +53,7 @@ impl Invaders {
                 }
             }
             if downwards { // Should move downards
-                let new_duration = std::cmp::max(self.move_timer.duration.as_millis() - 250, 250);
-                self.move_timer = Timer::from_millis(new_duration as u64);
+                self.increase_speed();
                 for invader in self.army.iter_mut() {
                     invader.y += 1;
                 }
@@ -63,6 +66,27 @@ impl Invaders {
             return true;
         }
         false
+    }
+    pub fn increase_speed(&mut self) {
+        let new_duration = std::cmp::max(self.move_timer.duration.as_millis() - 250, 250);
+        self.move_timer = Timer::from_millis(new_duration as u64);
+    }
+    pub fn all_killed(&self) -> bool {
+        self.army.is_empty()
+    }
+    pub fn reached_bottom(&self) -> bool {
+        self.army.iter().map(|invader| invader.y).max().unwrap_or(0) > NUM_ROWS - 2
+    }
+    pub fn kill_invader_at(&mut self, x: usize, y: usize) -> bool {
+        if let Some(idx) = self
+            .army
+            .iter()
+            .position(|invader| (invader.x == x) && (invader.y == y)) {
+            self.army.remove(idx);
+            true
+        } else {
+            false
+        }
     }
 }
 
